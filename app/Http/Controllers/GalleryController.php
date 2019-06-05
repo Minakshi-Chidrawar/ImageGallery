@@ -82,4 +82,26 @@ class GalleryController extends Controller
     {
         //
     }
+
+    public function viewGalleryList()
+    {
+        return view('gallery');
+    }
+    
+    public function saveGallery(Request $request)
+    {
+        
+    }
+
+    
+    public function viewGalleryPics()
+    {
+        
+    }
+
+    
+    public function uploadImage(Request $request)
+    {
+        
+    }
 }
