@@ -23,7 +23,7 @@
                         @foreach ($galleries as $gallery)
                         <tr>
                             <td>{{ $gallery->name }}</td>
-                            <td>View</td>
+                            <td><a href="{{ url('gallery/view/' . $gallery->id) }}">View</a></td>
                         </tr>
                         @endforeach
                     </tbody>
