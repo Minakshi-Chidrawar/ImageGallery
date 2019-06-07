@@ -54,9 +54,11 @@ class GalleryController extends Controller
         //
     }
    
-    public function viewGalleryPics()
+    public function viewGalleryPics($id)
     {
-        
+        $gallery = Gallery::findOrFail($id);
+
+        return view('gallery.viewGallery', compact('gallery'));
     }
     
     public function uploadImage(Request $request)
