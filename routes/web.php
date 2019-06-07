@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('gallery/list', 'GalleryController@viewGalleryList');
-Route::post('gallery/list', 'GalleryController@saveGallery');
+Route::get('gallery/list', 'GalleryController@index');
+Route::post('gallery/save', 'GalleryController@store');
 Route::get('gallery/view/{id}', 'GalleryController@viewGalleryPics');
 Route::post('image/do-upload', 'GalleryController@uploadImage');
