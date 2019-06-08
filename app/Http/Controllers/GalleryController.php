@@ -22,6 +22,10 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'gallery_name' => 'required|min:3'
+        ]);
+        
         $gallery = new Gallery;
 
         //save a new gallery
