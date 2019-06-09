@@ -67,6 +67,22 @@ class GalleryController extends Controller
     
     public function uploadImage(Request $request)
     {
-        
+        // Get the file from the post request
+        $file = $request->file('file');
+
+        // Set the filename
+        $filename = uniqid() . $file->getClientOriginalExtension();
+
+        // Move the file to the expected location
+        $file->move('gallery/images', $filename);
+        dd($file->getClientSize());
+        // Save the image details into the database
+        $gallery = Gallery::findOrFail($request->input('gallery_id'));
+        $image = $gallery->images()->create([
+            'gallery_id' => $request->input('gallery_id'),
+            'file_name' => $filename,
+            'file_path' => 'gallery/images/' . $filename,
+            'created_by' => '1',
+        ]);
     }
 }
