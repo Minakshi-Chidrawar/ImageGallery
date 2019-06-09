@@ -47,7 +47,8 @@
                 <div class="form-group">
                     <input type="text" name="gallery_name"
                         id='gallery_name' placeholder='Name of the Gallery'
-                    class="form-control" />
+                    class="form-control" 
+                    value="{{ old('gallery_name')}}" />
                 </div>
 
                 <button class="btn btn-primary">Save</button>
