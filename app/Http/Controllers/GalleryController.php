@@ -78,9 +78,11 @@ class GalleryController extends Controller
         dd($file->getClientSize());
         // Save the image details into the database
         $gallery = Gallery::findOrFail($request->input('gallery_id'));
-        $image = $gallery->images()->create([
+        $image = $gallery->images()->save([
             'gallery_id' => $request->input('gallery_id'),
             'file_name' => $filename,
+            'file_size' => $file->getClientSize(),
+            'file_mime' => $file->getClientMimeType(),
             'file_path' => 'gallery/images/' . $filename,
             'created_by' => '1',
         ]);
