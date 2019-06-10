@@ -17,6 +17,8 @@ class CreateImagesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('gellery_id');
             $table->string('file_name');
+            $table->string('file_size');
+            $table->string('file_mime');
             $table->string('file_path');
             $table->integer('created_by');
             $table->timestamps();
